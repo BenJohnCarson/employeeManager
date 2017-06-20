@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employees</title>
+        <script src="index.js"></script>
+        <script src="EmployeeManagerController.js"></script>
+        <script src="EmployeeManagerModel.js"></script>
+        <script src="EmployeeManagerView.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <h1>Ex1 Employees</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Experience
+                                </th>
+                                <th>
+                                    Skills
+                                </th>
+                                <th>
+                                    Salary
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="employee-table">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <form class="form-horizontal" id="add-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="id">ID:</label>
+                            <input type="text" class="form-control" id="id" />
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Experience:</label>
+                            <input type="text" class="form-control" id="experience" />
+                        </div>
+                        <div class="form-group">
+                            <label for="skillsOn">Skills:</label>
+                            <input type="text" class="form-control" id="skillsOn" />
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">Salary:</label>
+                            <input type="number" class="form-control" id="salary" />
+                        </div>
+                        <button type="submit" class="btn btn-defualt" id="add">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
