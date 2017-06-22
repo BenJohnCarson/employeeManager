@@ -21,13 +21,12 @@
             this.setUpEdit();
         },
         setupAdd: function() {
-            const self = this;
-            this.addButton.addEventListener("click", function(e) {
+            this.addButton.addEventListener("click", (e) => {
                 e.preventDefault();
-                const employee = self.view.addData();
-                self.model.addEmployee(employee);
-                self.view.clearAddForm(self.addButton);
-                self.reinit();
+                const employee = this.view.addData();
+                this.model.addEmployee(employee);
+                this.view.clearAddForm(this.addButton);
+                this.reinit();
             });
         },
         getButtons: function(buttonClass) {
@@ -39,24 +38,22 @@
             })
         },
         setUpDelete: function() {
-            const self = this;
             const deleteButtons = this.getButtons(this.deleteButtonClass);
-            this.addClickEventListeners(deleteButtons, function(e){
+            this.addClickEventListeners(deleteButtons, (e) => {
                 e.preventDefault();
-                let employeeId = this.closest('tr').id;
-                self.model.deleteEmployee(employeeId);
-                self.reinit();
+                let employeeId = e.target.closest('tr').id;
+                this.model.deleteEmployee(employeeId);
+                this.reinit();
             })
         },
         setUpEdit: function() {
-            const self = this;
             const editButtons = this.getButtons(this.editButtonClass)
-            this.addClickEventListeners(editButtons, function(e){
+            this.addClickEventListeners(editButtons, (e) => {
                 e.preventDefault();
-                let employeeId = this.closest('tr').id;
-                const employeeData = self.model.getEmployee(employeeId);
-                self.view.editForm(self.addButton, employeeData[0]);
-                self.model.deleteEmployee(employeeId); // TODO Shortcut instead of actually editing :S
+                let employeeId = e.target.closest('tr').id;
+                const employeeData = this.model.getEmployee(employeeId);
+                this.view.editForm(this.addButton, employeeData[0]);
+                this.model.deleteEmployee(employeeId); // TODO Shortcut instead of actually editing :S
             });
         }
 
